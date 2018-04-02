@@ -40,5 +40,6 @@ class DeviseCreateMembers < ActiveRecord::Migration[5.1]
     add_index :members, :reset_password_token, unique: true
     # add_index :members, :confirmation_token,   unique: true
     # add_index :members, :unlock_token,         unique: true
+    
   end
 end
