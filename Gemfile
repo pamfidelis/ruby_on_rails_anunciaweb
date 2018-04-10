@@ -16,6 +16,7 @@ gem 'devise'
 gem 'devise-i18n'
 # Adaptation into Rails gem in order to make it easier to integrate all the assets (fonts, images, css and js) 
 gem 'bootstrap_sb_admin_base_v2'
+gem 'rails-assets-bootstrap'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 # Use Puma as the app server
