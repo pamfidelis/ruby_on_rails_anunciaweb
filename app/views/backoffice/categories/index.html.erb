@@ -34,7 +34,7 @@
                                             <td><%= category.id %></td>
                                             <td><%= category.description %></td>
                                             <td style="width: 150px">
-                                                <%= link_to edit_backoffice_categories_path(category), class: "btn btn-primary btn-circle" do %>
+                                                <%= link_to edit_backoffice_categories_path(:id), class: "btn btn-primary btn-circle" do %>
                                                     <i class="fa fa-edit"></i>
                                                 <% end %>
                                                 <%= link_to backoffice_categories_path, class: "btn btn-danger btn-circle", disabled: true do %>
