@@ -37,6 +37,16 @@ class Backoffice::AdminsController < BackofficeController
     end
   end
 
+  def destroy
+    admin_email = @admin.email
+
+    if @admin.destroy
+      redirect_to backoffice_categories_path, notice: "O Administrador #{admin.email} foi removido com sucesso"
+    else
+      render :index
+    end
+  end
+
   private
 
   def set_admin
