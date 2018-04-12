@@ -18,7 +18,7 @@ gem 'devise-i18n'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'rails-assets-bootstrap'
 # A shim for desktop Notifications API. Employing a varying techniques to draw a user back to a tab
-gem 'rails-assets-notify', source: 'https://rails-assets.org'
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 # Use Puma as the app server
