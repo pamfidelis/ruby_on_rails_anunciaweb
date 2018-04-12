@@ -23,6 +23,8 @@ source 'https://rails-assets.org' do
     gem 'rails-assets-bootbox'
 end
 
+gem 'faker'
+
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 # Use Puma as the app server
