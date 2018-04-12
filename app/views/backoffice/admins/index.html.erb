@@ -25,14 +25,14 @@
                               <i class="fa fa-edit"></i>
                           <% end %>
                           <% if current_admin.id != admin.id %>
-                          <%= link_to backoffice_admins_path(admin), class: "btn btn-danger btn-circle", 
-                              data: {confirm: "Você deseja realmente excluir #{admin.email}?"}, method: :delete do %>
-                              <i class="fa fa-minus"></i>
-                          <% end %>
+                            <%= link_to backoffice_admins_path(admin), class: "btn btn-danger btn-circle", 
+                                data: {confirm: "Você deseja realmente excluir #{admin.email}?"}, method: :delete do %>
+                                <i class="fa fa-minus"></i>
+                            <% end %>
                           <% else %>
-                            <%= link_to "#" class: "btn btn-danger btn-circle", disabled: "disabled" do %>
+                            <%= link_to "#", class: "btn btn-danger btn-circle", disabled: "disabled" do %>
                               <i class="fa fa-minus"></i>
-                          <% end %>
+                            <% end %>
                           <% end %>
                       </td>
                   </tr>

@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   namespace :backoffice do
     resource :categories, except: [:show, :destroy]
+    resource :category, except: [:show, :destroy]
+    
     resource :admins, except: [:show, :destroy]
+    resource :admin, except: [:show, :destroy]
 
     get 'dashboard', to: 'dashboard#index'
     get 'categories', to: 'categories#index'

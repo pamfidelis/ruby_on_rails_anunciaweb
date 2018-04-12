@@ -12,7 +12,7 @@ class Backoffice::AdminsController < BackofficeController
   def create
     @admin = Admin.new(params_admin)
     if @admin.save
-      redirect_to backoffice_categories_path, notice: "O Administrador #{@admin.email} foi cadastrada com sucesso"
+      redirect_to backoffice_admins_path, notice: "O Administrador #{@admin.email} foi cadastrada com sucesso"
     else
       render :new
     end
@@ -31,7 +31,7 @@ class Backoffice::AdminsController < BackofficeController
     end
 
     if @admin.update(params_admin)
-      redirect_to backoffice_categories_path, notice: "O Administrador #{@admin.email} foi atualizada com sucesso"
+      redirect_to backoffice_admins_path, notice: "O Administrador #{@admin.email} foi atualizada com sucesso"
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class Backoffice::AdminsController < BackofficeController
     admin_email = @admin.email
 
     if @admin.destroy
-      redirect_to backoffice_categories_path, notice: "O Administrador #{admin.email} foi removido com sucesso"
+      redirect_to backoffice_admins_path, notice: "O Administrador #{admin.email} foi removido com sucesso"
     else
       render :index
     end
@@ -50,7 +50,7 @@ class Backoffice::AdminsController < BackofficeController
   private
 
   def set_admin
-    @admin = admin.find(params[:id])
+    @admin = Admin.find(params[:format])
   end
 
   def params_admin
