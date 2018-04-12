@@ -26,7 +26,7 @@
                           <% end %>
                           <% if current_admin.id != admin.id %>
                             <%= link_to backoffice_admins_path(admin), class: "btn btn-danger btn-circle", 
-                                data: {confirm: "Você deseja realmente excluir #{admin.email}?"}, method: :delete do %>
+                                data: {confirm: "Você deseja realmente excluir <b>#{admin.email}</b>?"}, method: :delete do %>
                                 <i class="fa fa-minus"></i>
                             <% end %>
                           <% else %>

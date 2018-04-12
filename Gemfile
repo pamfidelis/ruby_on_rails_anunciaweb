@@ -16,9 +16,13 @@ gem 'devise'
 gem 'devise-i18n'
 # Adaptation into Rails gem in order to make it easier to integrate all the assets (fonts, images, css and js) 
 gem 'bootstrap_sb_admin_base_v2'
-gem 'rails-assets-bootstrap'
-# A shim for desktop Notifications API. Employing a varying techniques to draw a user back to a tab
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+
+source 'https://rails-assets.org' do
+    gem 'rails-assets-bootstrap'
+    gem 'rails-assets-notifyjs'
+    gem 'rails-assets-bootbox'
+end
+
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 # Use Puma as the app server
@@ -30,7 +34,6 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'rb-readline'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
@@ -65,6 +68,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
+  gem 'rb-readline'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
