@@ -9,7 +9,8 @@ namespace :utils do
                     name: Faker::HarryPotter.character,
                     email: Faker::Internet.email,
                     password: "123456",
-                    password_confirmation: "123456")
+                    password_confirmation: "123456",
+                    role: [0,1].sample)
     end
 
     puts "Administradores cadastrados com sucesso!"
