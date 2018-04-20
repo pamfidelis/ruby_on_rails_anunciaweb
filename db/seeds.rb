@@ -26,6 +26,9 @@ puts "CATEGORIAS cadastradas com sucesso!"
 
 puts "Cadastrando Admins"
 
-Admin.find_or_create_by(email: "admin@admin", password: 123456, password_confirmation: 123456)
+Admin.create!(name: 'admin', 
+              email: "admin@admin", 
+              password: 123456, 
+              password_confirmation: 123456)
 
 puts "Admin cadastrado com sucesso"
