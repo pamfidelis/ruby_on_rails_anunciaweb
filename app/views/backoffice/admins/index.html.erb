@@ -25,19 +25,21 @@
                       <td><%= admin.email %></td>
                       <td><%= admin.role_br %></td>
                       <td style="width: 150px">
+                        <% if policy(@admins).new? %>
                           <%= link_to edit_backoffice_admins_path(admin), class: "btn btn-primary btn-circle" do %>
                               <i class="fa fa-edit"></i>
                           <% end %>
-                          <% if current_admin.id != admin.id %>
-                            <%= link_to backoffice_admins_path(admin), class: "btn btn-danger btn-circle", 
-                                data: {confirm: "Você deseja realmente excluir <b>#{admin.email}</b>?"}, method: :delete do %>
-                                <i class="fa fa-minus"></i>
-                            <% end %>
-                          <% else %>
-                            <%= link_to "#", class: "btn btn-danger btn-circle", disabled: "disabled" do %>
+                        <% end %>
+                        <% if current_admin.id != admin.id %>
+                          <%= link_to backoffice_admins_path(admin), class: "btn btn-danger btn-circle", 
+                              data: {confirm: "Você deseja realmente excluir <b>#{admin.email}</b>?"}, method: :delete do %>
                               <i class="fa fa-minus"></i>
-                            <% end %>
                           <% end %>
+                        <% else %>
+                          <%= link_to "#", class: "btn btn-danger btn-circle", disabled: "disabled" do %>
+                            <i class="fa fa-minus"></i>
+                          <% end %>
+                        <% end %>
                       </td>
                   </tr>
                   <% end %>

@@ -16,6 +16,8 @@ gem 'devise'
 gem 'devise-i18n'
 # Adaptation into Rails gem in order to make it easier to integrate all the assets (fonts, images, css and js) 
 gem 'bootstrap_sb_admin_base_v2'
+# Minimal authorization through OO design and pure Ruby classes
+gem 'pundit'
 
 source 'https://rails-assets.org' do
     gem 'rails-assets-bootstrap'
@@ -43,7 +45,7 @@ gem 'jquery-rails'
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
