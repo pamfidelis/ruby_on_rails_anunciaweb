@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-
   get 'backoffice', to: 'backoffice/dashboard#index'
 
   namespace :backoffice do
-    resource :categories, except: [:show, :destroy]
-    resource :category, except: [:show, :destroy]
-    
-    resource :admins, except: [:show, :destroy]
-    resource :admin, except: [:show, :destroy]
+    resources :categories, except: [:show, :destroy]
+
+    resources :admins, except: [:show, :destroy]
 
     get 'dashboard', to: 'dashboard#index'
     get 'categories', to: 'categories#index'
@@ -18,7 +15,7 @@ Rails.application.routes.draw do
     get 'home', to: 'home#index'
 
     namespace :profile do
-      resource :dashboard, only: [:index]
+      resources :dashboard, only: [:index]
     end
   end
 
