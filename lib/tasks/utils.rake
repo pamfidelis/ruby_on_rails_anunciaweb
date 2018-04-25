@@ -8,9 +8,9 @@ namespace :utils do
     puts "Criando o BD ... #{%x(rake db:create)}"
     puts %x(rake db:migrate)
     puts %x(rake db:seed)
-    puts %x(rake db:generate_admins)
-    puts %x(rake db:generate_members)
-    puts %x(rake db:generate_ads)
+    puts %x(rake utils:generate_admins)
+    puts %x(rake utils:generate_members)
+    puts %x(rake utils:generate_ads)
 
     puts "Concluído"
   end
@@ -38,8 +38,8 @@ namespace :utils do
     10.times do
       Member.create!( name: Faker::HarryPotter.character,
                       email: Faker::Internet.email,
-                      password: "123456"
-      )
+                      password: "123456",
+                      password_confirmation: "123456")
     end
 
     puts "MEMBROS cadastrados com sucesso!"
