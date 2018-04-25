@@ -39,7 +39,8 @@ namespace :utils do
         title: Faker::Lorem.sentence([2,3,4,5].sample),
         description: Faker::Lorem.sentence([2,3].sample),
         member: Member.all.sample,
-        category: Category.all.sample
+        category: Category.all.sample,
+        price: "#{Random.rand(500)},#{Random.rand(99)}"
       )
     end
 
