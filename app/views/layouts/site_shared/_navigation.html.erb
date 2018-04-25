@@ -6,12 +6,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-               <%= link_to "Login", new_member_session_path, class: "nav-link"  %>
-            </li>            
-            <li class="nav-item">
-              <%= link_to "Cadastre-se", new_member_registration_path, class: "nav-link" %>
-            </li>
+            <% unless member_signed_in?%>
+              <li class="nav-item">
+                 <%= link_to "Login", new_member_session_path, class: "nav-link"  %>
+              </li>            
+              <li class="nav-item">
+                <%= link_to "Cadastre-se", new_member_registration_path, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                 <%= link_to current_member.email, "#"  %>
+              </li>            
+              <li class="nav-item">
+                <%= link_to "Logout", destroy_member_session_path, method: :delete %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>

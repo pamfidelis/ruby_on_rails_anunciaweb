@@ -24,12 +24,21 @@ end
 
 puts "CATEGORIAS cadastradas com sucesso!"
 
-puts "Cadastrando Admins"
+puts "Cadastrando Admin"
 
-Admin.create!(name: 'admin', 
+Admin.create!(name: 'Admin', 
               email: "admin@admin", 
               password: 123456, 
               password_confirmation: 123456,
               role: 0)
 
 puts "Admin cadastrado com sucesso"
+
+puts "Cadastrando Member"
+
+Member.create!(name: "Member",
+               email: "member@member", 
+               password: 123456, 
+               password_confirmation: 123456)
+
+puts "Member cadastrado com sucesso"

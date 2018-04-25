@@ -36,9 +36,9 @@ namespace :utils do
     puts "Cadastrando MEMBROS..."
 
     10.times do
-      Member.create!(
-                    email: Faker::Internet.email,
-                    password: "123456"
+      Member.create!( name: Faker::HarryPotter.character,
+                      email: Faker::Internet.email,
+                      password: "123456"
       )
     end
 
