@@ -38,7 +38,7 @@
                         <%= link_to edit_backoffice_admins_path(admin), class: "btn btn-primary btn-circle" do %>
                             <i class="fa fa-edit"></i>
                         <% end %>
-                        <% if current_admin.id != admin.id %>
+                        <% if current_admin.id != admin.id && policy(current_admin).destroy? %>
                           <%= link_to backoffice_admins_path(admin), class: "btn btn-danger btn-circle", 
                               data: {confirm: "Você deseja realmente excluir <b>#{admin.email}</b>?"}, method: :delete do %>
                               <i class="fa fa-minus"></i>
