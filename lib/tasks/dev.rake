@@ -1,7 +1,6 @@
-namespace :utils do
-
+namespace :dev do
   desc "Setup Development"
-  task setup_dev: :environment do
+  task setup: :environment do
     imagens_path = Rails.root.join('public', 'system')
 
     puts "Executando o setup de desenvolvimento ..."
@@ -11,9 +10,9 @@ namespace :utils do
     puts "Criando o BD ... #{%x(rake db:create)}"
     puts %x(rake db:migrate)
     puts %x(rake db:seed)
-    puts %x(rake utils:generate_admins)
-    puts %x(rake utils:generate_members)
-    puts %x(rake utils:generate_ads)
+    puts %x(rake dev:generate_admins)
+    puts %x(rake dev:generate_members)
+    puts %x(rake dev:generate_ads)
 
     puts "Concluído"
   end
