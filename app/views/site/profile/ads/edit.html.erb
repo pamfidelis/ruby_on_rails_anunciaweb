@@ -1,0 +1,47 @@
+<h1> Editando Anúncios </h1>
+
+<div class="bs-example" data-example-id="basic-forms">
+  <%= form_for([:site, :profile, @ad]) do |f| %>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class:"form-control", placeholder:"Título" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+            <%= f.label :category %>
+            <%= f.collection_select :category_id, Category.all, :id, :description, {}, { class:"form-control"} %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+            <%= f.label :price %>
+            <div class="input-group">
+              <div class="input-group-addon form-control"> <%= @ad.price.currency.symbol %> </div>
+              <%= f.text_field :price, class:"form-control", placeholder:"Preço" %>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+            <%= f.label :picture %> <br>
+            <%= image_tag @ad.picture(:medium), class: "img-cicle" %>
+            <%= f.file_field :picture, class: "btn" %>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-default">Salvar</button>
+  <% end %>
