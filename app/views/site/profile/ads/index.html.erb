@@ -1,0 +1,25 @@
+<h1> Meus Anúncios </h1>
+
+<div class="bs-example" data-example-id="simple-table">
+   <table class="table">
+      <caption>Optional table caption.</caption>
+      <thead>
+         <tr>
+            <th>#</th>
+            <th>Imagem</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+         </tr>
+      </thead>
+      <tbody>
+        <% @ads.each do |ad| %>
+          <tr>
+             <th scope="row"> <%= ad.id %> </th>
+             <td> <%= image_tag ad.picture.url(:thumb) %> </td>
+             <td> <%= ad.description %> </td>
+             <td> <%= humanized_money_with_symbol ad.price %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+   </table>
+</div>
