@@ -5,6 +5,13 @@ class Site::Profile::AdsController < Site::ProfileController
     @ads = Ad.member_current(current_member)
   end
 
+  def new
+    @ad = Ad.new
+  end
+
+  def create
+  end
+
   def edit
   end
 
