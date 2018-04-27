@@ -7,6 +7,7 @@
          <tr>
             <th>#</th>
             <th>Imagem</th>
+            <th>Título</th>
             <th>Descrição</th>
             <th>Preço</th>
             <th></th>
@@ -17,6 +18,7 @@
           <tr>
             <th scope="row"> <%= ad.id %> </th>
             <td> <%= image_tag ad.picture.url(:thumb) %> </td>
+            <td> <%= ad.title %> </td>
             <td> <%= ad.description %> </td>
             <td> <%= humanized_money_with_symbol ad.price %> </td>
             <td>
