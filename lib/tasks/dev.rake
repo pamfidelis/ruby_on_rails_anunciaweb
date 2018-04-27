@@ -49,6 +49,21 @@ namespace :dev do
 
   desc "Cria Anúncios Fake"
   task generate_ads: :environment do
+    puts "Cadastrando ANÚNCIOS Para o MEMBRO PADRÃO ..."
+
+    5.times do
+      Ad.create!(
+        title: Faker::Lorem.sentence([2,3,4,5].sample),
+        description: Faker::Lorem.sentence([2,3].sample),
+        member: Member.first,
+        category: Category.all.sample,
+        price: "#{Random.rand(500)},#{Random.rand(99)}",
+        picture: File.new(Rails.root.join("public", "template", "images-for-ads", "#{Random.rand(9)}.jpg"), "r")
+      )
+    end
+
+    puts "ANÚNCIOS cadastrados com sucesso!"
+
     puts "Cadastrando ANÚNCIOS..."
 
     100.times do
