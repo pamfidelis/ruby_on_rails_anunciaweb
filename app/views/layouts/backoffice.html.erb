@@ -35,17 +35,7 @@
         </div>      
     </div>
 
-    <% if notice %>
-      <script>
-        $.notify("<%= notice %>", "success");
-      </script>
-    <% end %>
-
-    <% if alert %>
-      <script>
-        $.notify("<%= notice %>", "alert");
-      </script>
-    <% end %>
+    <%= render partial: "layouts/shared/notifications"%>
 </body>
 
 </html>

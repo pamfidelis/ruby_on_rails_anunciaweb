@@ -1,0 +1,11 @@
+<% if notice %>
+  <script>
+    $.notify("<%= notice %>", "success");
+  </script>
+<% end %>
+
+<% if alert %>
+  <script>
+    $.notify("<%= notice %>", "alert");
+  </script>
+<% end %>
