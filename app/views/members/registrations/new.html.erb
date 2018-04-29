@@ -1,29 +1,52 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">Sign Up</div>
+        <div style="float:right; font-size: 85%; position: relative; top:-10px">
+          <%= link_to "Sign in", new_session_path(resource_name) %>
+        </div>
+      </div>
+      <div class="panel-body" >
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"form-horizontal" }) do |f| %>
+          
+          <div class="form-group">
+            <%= f.label :email, class: "col-md-3 control-label" %><br />
+            <div class="col-md-9">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email Address" %>
+            </div>
+          </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <div class="form-group">
+            <%= f.label :name, class: "col-md-3 control-label" %><br />
+            <div class="col-md-9">
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "Name" %>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :password, class: "col-md-3 control-label" %>
+            <div class="col-md-9">
+              <input type="password" class="form-control" name="passwd" placeholder="Password">
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+            </div>
+          </div>
+          
+          <div class="col-md-offset-3 col-md-9">
+            <!-- Button -->
+            <div class="col-sm-12 controls">
+              <div class="actions">
+                <%= f.submit "Sign Up", class: "btn btn-info" %>
+                <span >or</span> 
+                <a id="btn-fblogin" href="#" class="btn btn-primary" disabled="true">Sign Up with Facebook</a>
+              </div>              
+            </div>            
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "members/shared/links" %>
+</div>
