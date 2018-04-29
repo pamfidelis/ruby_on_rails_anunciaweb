@@ -46,4 +46,10 @@
     </div>
     <!-- /#wrapper -->
 
+    <% if notice %>
+      <script>
+        $.notify("<%= notice %>", "success");
+      </script>
+    <% end %>
+  </body>
 </html>
