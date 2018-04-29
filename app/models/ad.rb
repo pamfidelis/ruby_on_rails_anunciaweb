@@ -1,5 +1,5 @@
 class Ad < ApplicationRecord
-  belongs_to :category
+  belongs_to :category, counter_cache: true
   belongs_to :member
 
   validates :title, :category, :description, :picture, presence: true
