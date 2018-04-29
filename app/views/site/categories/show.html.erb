@@ -1,5 +1,19 @@
-<h1> Anúncios da categoria <%= @category %> </h1>
-
-<div class="bs-example" data-example-id="simple-table">
-   Teste
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <%= render partial: "site/shared/sidebar"%>
+    </div>
+    <!-- /.col-lg-3 -->
+    <div class="col-lg-9"><br/>
+      <div class="well">
+        <h4> <%= @ads.first.category.description %> </h4>
+      </div><br/>
+      <div class="row">
+        <%= render partial: "site/shared/ads"%>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.col-lg-9 -->
+  </div>
+  <!-- /.row -->
 </div>
