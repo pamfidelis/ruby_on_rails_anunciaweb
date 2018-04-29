@@ -1,0 +1,15 @@
+<% @ads.each do |ad| %>
+  <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100">
+      <%= image_tag ad.picture.url(:medium) %>
+      <a href="#"><%= truncate( ad.title, length: 30 ) %></a>
+      <div class="card-body">
+        <h5><%= humanized_money_with_symbol ad.price%></h5>
+        <p class="card-text"><%= ad.description %></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+      </div>
+    </div>
+  </div>
+<% end %>
