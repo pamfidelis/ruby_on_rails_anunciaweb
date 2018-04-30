@@ -19,7 +19,25 @@
 
   <body>
     <%= render partial: "layouts/site_shared/navigation" %>
-    <%= yield %>
+    
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+          <%= render partial: "layouts/site_shared/sidebar"%>
+        </div>
+
+        <div class="col-lg-9">
+          <% if controller_path == "site/home" %>
+            <%= render partial: "layouts/site_shared/carrousel"%>
+          <% end %>
+          
+          <div class="row">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <%= render partial: "layouts/site_shared/footer" %>
   </body>
 </html>

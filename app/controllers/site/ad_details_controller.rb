@@ -2,6 +2,8 @@ class Site::AdDetailsController < SiteController
   before_action :set_ad, only: [:show]
 
   def show
+    @ad = Ad.find(params[:id])
+    @categories = Category.order_by_description
   end
 
   private
