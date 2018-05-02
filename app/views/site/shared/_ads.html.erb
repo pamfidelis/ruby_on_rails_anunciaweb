@@ -2,9 +2,9 @@
   <div class="col-lg-4 col-md-6 mb-4">
     <div class="card h-100">
       <%= image_tag ad.picture.url(:medium) %>
-      <a href="#"><%= truncate( ad.title, length: 30 ) %></a>
+      <h5><%= link_to  truncate( ad.title, length: 20 ), site_ad_detail_path(ad) %></h5>
+      <h5><%= humanized_money_with_symbol ad.price%></h5>
       <div class="card-body">
-        <h5><%= humanized_money_with_symbol ad.price%></h5>
         <p class="card-text"><%= ad.description %></p>
       </div>
       <div class="card-footer">
@@ -13,9 +13,3 @@
     </div>
   </div>
 <% end %>
-
-<div class="row">
-  <div class="text-center">
-    <%= paginate @ads %>
-  </div>
-</div>
