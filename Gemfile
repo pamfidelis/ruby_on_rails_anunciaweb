@@ -25,8 +25,6 @@ source 'https://rails-assets.org' do
     gem 'rails-assets-bootbox'
 end
 
-gem 'faker'
-
 gem 'money-rails'
 
 gem 'paperclip'
@@ -76,6 +74,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
   gem 'rb-readline'
+  gem 'rails-erd'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
