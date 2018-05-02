@@ -31,6 +31,9 @@ gem 'money-rails'
 
 gem 'paperclip'
 
+gem 'kaminari'
+gem 'kaminari-i18n'
+
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 # Use Puma as the app server
