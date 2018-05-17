@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180429195645) do
+ActiveRecord::Schema.define(version: 20180510170904) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 20180429195645) do
     t.integer "ads_count"
   end
 
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "body"
+    t.bigint "member_id"
+    t.bigint "ad_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ad_id"], name: "index_comments_on_ad_id"
+    t.index ["member_id"], name: "index_comments_on_member_id"
+  end
+
   create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -75,4 +85,6 @@ ActiveRecord::Schema.define(version: 20180429195645) do
 
   add_foreign_key "ads", "categories"
   add_foreign_key "ads", "members"
+  add_foreign_key "comments", "ads"
+  add_foreign_key "comments", "members"
 end

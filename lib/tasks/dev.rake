@@ -13,6 +13,7 @@ namespace :dev do
     puts %x(rake dev:generate_admins)
     puts %x(rake dev:generate_members)
     puts %x(rake dev:generate_ads)
+    puts %x(rake dev:generate_comments)
 
     puts "Concluído"
   end
@@ -78,5 +79,20 @@ namespace :dev do
     end
 
     puts "ANÚNCIOS cadastrados com sucesso!"
+  end
+
+  desc "Cria ComeNtários Fake"
+  task generate_comments: :environment do
+    puts "Cadastrando Comentários..."
+
+    Ad.all.each do |ad|
+      (Random.rand(3)).times do
+        Comment.create!(
+          body: Faker::Lorem.sentence([2,3].sample),
+          member: Member.all.sample,
+          ad: ad)
+      end
+    end
+    puts "COMENTÁRIOS cadastrados com sucesso!"
   end
 end

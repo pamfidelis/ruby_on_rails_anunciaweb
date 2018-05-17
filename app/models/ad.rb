@@ -1,6 +1,7 @@
 class Ad < ApplicationRecord
   belongs_to :category, counter_cache: true
   belongs_to :member
+  has_many :comments
 
   # Constants
   QQT_PER_PAGE = 6
@@ -17,7 +18,7 @@ class Ad < ApplicationRecord
     where("lower (title) LIKE ?", "%#{search.downcase}%").page(page).per(QQT_PER_PAGE) }
 
   scope :member_current, ->(member) { where(member: member).order(created_at: :desc) }
-  
+
   scope :where_category, ->(id) { where(category: id) }
 
   # gem paperclip
